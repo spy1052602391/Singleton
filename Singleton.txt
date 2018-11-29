@@ -1,0 +1,24 @@
+class Singleton{
+    private static Singleton SING;
+    private Singleton(){
+
+    }
+    public static Singleton getSing(){
+        if(null == SING){
+            SING = new Singleton();
+        }
+        return SING;
+    }
+    public void Print(){
+        System.out.println("ÀÁººÊ½µ¥Àý");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Singleton sing = Singleton.getSing();
+        sing.Print();
+        Singleton sing2 = Singleton.getSing();
+        System.out.println(sing == sing2);
+    }
+}
